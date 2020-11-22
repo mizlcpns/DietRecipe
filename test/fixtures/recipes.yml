@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  menu: MyString
+  p: 1
+  f: 1
+  c: 1
+  content: MyText
+  user: one
+
+two:
+  menu: MyString
+  p: 1
+  f: 1
+  c: 1
+  content: MyText
+  user: two

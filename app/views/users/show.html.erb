@@ -16,3 +16,22 @@
     </div>
   </div>
 </div>
+
+
+<div class="card col-sm-3 pl-0 pr-0 mt-5" >
+  <% @user.recipes.each do |recipe|%>
+    <%= image_tag recipe.recipe_image.url, class: "bd-placeholder-img card-img-top recipe_icon" %>
+    <div class="card-body">
+      <h5 class="card-title font-weight-bold"><%= recipe.menu %></h5>
+      <p class="card-text">
+        <div class="mr-3">タンパク質：<%= recipe.p %>g</div>
+        <div class="mr-3">脂質：<%= recipe.f %>g</div>
+        <div>炭水化物：<%= recipe.c %>g</div>
+      </p>
+      <%= link_to "レシピを見る", recipe_path(recipe), class: "btn btn-primary" %>
+      <% if current_user.id == @user.id %>
+        <%= link_to "削除", recipe_path(recipe), class: "btn btn-danger", method: :destroy %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

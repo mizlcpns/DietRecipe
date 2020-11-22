@@ -1,0 +1,27 @@
+<h1>レシピ詳細</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="card justify-content-center offset-sm-2 col-sm-8 pl-0 pr-0 mt-5 mb-5">
+      <%= image_tag @recipe.recipe_image.url, class: "bd-placeholder-img card-img-top recipe_detail" %>
+      <div class="card-body">
+        <h4 class="card-title font-weight-bold mb-4"><%= @recipe.menu %></h5>
+        <p class="card-text">
+          <span class="mr-3">タンパク質：<%= @recipe.p %>g</span>
+          <span class="mr-3">脂質：<%= @recipe.f %>g</span>
+          <span>炭水化物：<%= @recipe.c %>g</span>
+        </p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <div class="font-weight-bold mb-2">＜作り方＞</div>
+          <%= @recipe.content %>
+        </li>
+      </ul>
+      <div class="card-body">
+        <a href="#" class="card-link">Card link</a>
+        <a href="#" class="card-link">Another link</a>
+      </div>
+    </div>
+  </div>
+</div>
