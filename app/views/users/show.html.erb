@@ -30,7 +30,7 @@
       </p>
       <%= link_to "レシピを見る", recipe_path(recipe), class: "btn btn-primary" %>
       <% if current_user.id == @user.id %>
-        <%= link_to "削除", recipe_path(recipe), class: "btn btn-danger", method: :destroy %>
+        <%= link_to "削除", recipe_path(recipe), method: :delete, class: "btn btn-danger" %>
       <% end %>
     </div>
   <% end %>

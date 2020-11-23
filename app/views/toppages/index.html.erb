@@ -1,6 +1,10 @@
 <% if logged_in? %>
   <p>ログインしています：　<%= current_user.name %></p>
-<% else %>  
+<% else %>
+
+  <div class="video">
+    <%= video_tag("/videos/video.mp4", autoplay: true, loop: true, muted: true, class: 'video-content') %>
+  </div>
   <div class="center jumbotron">
     <div class="text-center">
       <h1>ようこそDietRecipeへ！</h1>
