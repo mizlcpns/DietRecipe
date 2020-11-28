@@ -1,8 +1,9 @@
 class RecipesController < ApplicationController
-  before_action :require_user_logged_in
+  before_action :require_user_logged_in, except: [:index]
   before_action :correct_user, only: [:destroy]
   
   def index
+    @recipes = Recipe.order(id: :desc).page(params[:page]).per(12)
   end
 
   def show

@@ -1,12 +1,13 @@
-<header class="mb-4">
-  <nav class="navbar navbar-expand-sm navbar-light" style="background-color: #FFC7AF;">
-    <a class="navbar-brand" href="/" style="font-family: fantasy;">DietRecipe</a>
+<header>
+  <nav class="navbar navbar-expand-sm navbar-light" style="background-color: #DDDDDD;">
+    <%= link_to "DietRecipe", root_path, class: "navbar-brand", style: "font-family: fantasy;" %>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
       <ul class="navbar-nav">
+        <li class="nav-item"><%= link_to "レシピ一覧", recipes_path, class: "nav-link" %></li>
         <% if logged_in? %>
           <li class="nav-item"><%= link_to "レシピ投稿", new_recipe_path, class: "nav-link" %></li>
           <li class="nav-item"><%= link_to "ユーザー一覧", users_path, class: "nav-link" %></li>
