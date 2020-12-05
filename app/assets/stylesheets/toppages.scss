@@ -3,16 +3,41 @@
     width: 100vw;
     height: 100vh;
     position: relative;
-    background-position: center center;
+    background-position: left center;
     background-size: cover;
-    filter: grayscale(60%);
+    filter: grayscale(40%);
 }
 
 .toppage_text h1 {
-    padding-top: 330px;
-    padding-left: 60px;
-    font-size: 70px;
+    padding-top: 40vh;
+    padding-left: 5vw;
+    font-size: 8vh;
     color: #FFF;
     font-family: "Tsukushi A Round Gothic","筑紫A丸ゴシック"; 
     font-weight: bold;
+    text-shadow: 6px 5px 2px gray;
+}
+
+.intro {
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
+.intro h2 {
+    font-family: "ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro";
+    line-height: 4rem;
+}
+
+.appeal {
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
+.appeal h4 {
+    font-family: "ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro"; 
+    font-weight: bold;
+    border-bottom: solid 1px;
+    letter-spacing: 0.5rem;
 }
