@@ -7,24 +7,41 @@
     </div>
   </div>
   
-  <div class="row intro">
+  <div class="row message">
     <h2 class="offset-sm-2 col-sm-8 text-center mt-5">DietRecipeはダイエットをする時のレシピを提案し、<br>カロリー計算の手助けをしてくれるサービスです。</h2>
   </div>
   
   <div class="row appeal">
     <h4 class="offset-sm-4 col-sm-4 text-center mt-5">こんな悩みはありませんか？</h4>
-    <div class="calculate mt-5 row">
+    <div class="attraction mt-5 row">
       <%= image_tag "apple.jpg", size: "100x350", class: "offset-sm-2 col-sm-4 img" %>
       <div class="col-sm-4">
         <h3>毎回レシピを考えてカロリーを計算するのが面倒臭い<h3>
+        <h5 class="text-secondary mt-4">タンパク質・脂質・炭水化物の量を見ながら、お手軽にレシピを探すことができます。</h5>
       </div>
     </div>
-    <div class="calculate mt-5 row">
+    <div class="attraction mt-5 row">
       <%= image_tag "cooking.jpg", size: "100x350", class: "offset-sm-2 col-sm-4" %>
       <div class="col-sm-4">
         <h3>ダイエットに成功している人が何を食べているか気になる<h3>
+        <h5 class="text-secondary mt-4">自分でレシピを考える手間なく、他のユーザーのがダイエット中の食べているレシピを真似することができます。</h5>
       </div>
     </div>
   </div>
+  
+  <div class="row message">
+    <h2 class="offset-sm-2 col-sm-8 text-center mt-5">
+      ダイエットの基本は簡単です。<br>
+      消費カロリー＞摂取カロリーを心がけましょう。<br>
+      DietRecipeはきっとあなたのダイエットの助けになります。
+      <%= link_to "今すぐユーザー登録！", signup_path, class: "btn btn-secondary mt-3 pt-3 pr-4 pb-3 pl-4" %>
+    </h2>
+  </div>
+  
+  <footer class="text-center">
+    <div id="copyright">
+      Copyright &copy; 2020 DietRecipe All Rights Reserved.
+    </div>
+  </footer>
 <% end %>
 

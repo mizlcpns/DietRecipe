@@ -18,13 +18,13 @@
     text-shadow: 6px 5px 2px gray;
 }
 
-.intro {
+.message {
     width: 100vw;
     margin: 0;
     padding: 0;
 }
 
-.intro h2 {
+.message h2 {
     font-family: "ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro";
     line-height: 4rem;
 }
@@ -40,4 +40,14 @@
     font-weight: bold;
     border-bottom: solid 1px;
     letter-spacing: 0.5rem;
+}
+
+.attraction {
+    font-family: "ヒラギノ丸ゴ Pro","Hiragino Maru Gothic Pro";
+}
+
+footer {
+    width: 100vw;
+    margin: 0;
+    padding: 0;
 }
