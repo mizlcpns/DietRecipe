@@ -14,7 +14,7 @@
   <div class="row appeal">
     <h4 class="offset-sm-4 col-sm-4 text-center mt-5">こんな悩みはありませんか？</h4>
     <div class="attraction mt-5 row">
-      <%= image_tag "apple.jpg", size: "100x350", class: "offset-sm-2 col-sm-4 img" %>
+      <%= image_tag "apple.jpg", size: "100x350", class: "offset-sm-2 col-sm-4" %>
       <div class="col-sm-4">
         <h3>毎回レシピを考えてカロリーを計算するのが面倒臭い<h3>
         <h5 class="text-secondary mt-4">タンパク質・脂質・炭水化物の量を見ながら、お手軽にレシピを探すことができます。</h5>
@@ -29,17 +29,22 @@
     </div>
   </div>
   
-  <div class="row message">
+  <div class="row message mt-5">
     <h2 class="offset-sm-2 col-sm-8 text-center mt-5">
       ダイエットの基本は簡単です。<br>
       消費カロリー＞摂取カロリーを心がけましょう。<br>
       DietRecipeはきっとあなたのダイエットの助けになります。
-      <%= link_to "今すぐユーザー登録！", signup_path, class: "btn btn-secondary mt-3 pt-3 pr-4 pb-3 pl-4" %>
     </h2>
+    <%= link_to "今すぐユーザー登録！", signup_path, class: "btn btn-secondary offset-sm-5 col-sm-2 mt-5 pt-3 pr-4 pb-3 pl-4" %>
   </div>
   
-  <footer class="text-center">
-    <div id="copyright">
+  <div class="row message">
+    <h3 class="offset-sm-4 col-sm-4 text-center mt-5">ダイエットを、もっと簡単に</h3>
+    <%= image_tag "breakfast.jpg", size: "100x600", class: "offset-sm-2 col-sm-8 mt-3" %>
+  </div>
+  
+  <footer class="text-center mt-5">
+    <div>
       Copyright &copy; 2020 DietRecipe All Rights Reserved.
     </div>
   </footer>
