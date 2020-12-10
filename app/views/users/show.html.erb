@@ -1,4 +1,4 @@
-<div class="card mt-5 mx-auto pl-4" style="max-width: 540px;">
+<div class="card mt-5 mb-5 mx-auto pl-4" style="max-width: 540px;">
   <div class="row">
     <div class="col-sm-4">
       <% if @user.image? %>
@@ -22,20 +22,46 @@
   </div>
 </div>
 
-<div class="card col-sm-3 pl-0 pr-0 mt-5" >
-  <% @user.recipes.each do |recipe|%>
-    <%= image_tag recipe.recipe_image.url, class: "bd-placeholder-img card-img-top recipe_icon" %>
-    <div class="card-body">
-      <h5 class="card-title font-weight-bold"><%= recipe.menu %></h5>
-      <p class="card-text">
-        <div class="mr-3">タンパク質：<%= recipe.p %>g</div>
-        <div class="mr-3">脂質：<%= recipe.f %>g</div>
-        <div>炭水化物：<%= recipe.c %>g</div>
-      </p>
-      <%= link_to "レシピを見る", recipe_path(recipe), class: "btn btn-primary" %>
-      <% if current_user.id == @user.id %>
-        <%= link_to "削除", recipe_path(recipe), method: :delete, class: "btn btn-danger" %>
+<ul class="nav nav-pills flex-column flex-sm-row mb-3" id="pills-tab" role="tablist">
+  <li class="nav-item flex-sm-fill text-sm-center">
+    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">マイレシピ</a>
+  </li>
+  <li class="nav-item flex-sm-fill text-sm-center">
+    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">いいねしたレシピ</a>
+  </li>
+</ul>
+<div class="tab-content" id="pills-tabContent">
+  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+    <div class="card col-sm-3 pl-0 pr-0 mt-5" >
+      <% @user.recipes.each do |recipe|%>
+        <%= image_tag recipe.recipe_image.url, class: "bd-placeholder-img card-img-top recipe_icon" %>
+        <div class="card-body">
+          <h5 class="card-title font-weight-bold"><%= recipe.menu %></h5>
+          <p class="card-text">
+            <div class="mr-3">タンパク質：<%= recipe.p %>g</div>
+            <div class="mr-3">脂質：<%= recipe.f %>g</div>
+            <div>炭水化物：<%= recipe.c %>g</div>
+          </p>
+          <%= link_to "レシピを見る", recipe_path(recipe), class: "btn btn-primary" %>
+          <% if current_user.id == @user.id %>
+            <%= link_to "削除", recipe_path(recipe), method: :delete, class: "btn btn-danger mr-2" %>
+          <% end %>
+          <%= recipe.likes.count %>
+          <% if current_user.already_liked?(recipe) %>
+            <%= link_to recipe_likes_path(recipe), method: :delete do %>
+              <i class="fas fa-heart"></i>
+            <% end %>
+          <% else %>
+            <%= link_to recipe_likes_path(recipe), method: :post do %>
+              <i class="far fa-heart"></i>
+            <% end %>
+          <% end %>
+        </div>
       <% end %>
     </div>
-  <% end %>
+  </div>
+  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+    いいね！した投稿を一覧表示
+  </div>
 </div>
+
