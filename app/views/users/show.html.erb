@@ -62,7 +62,8 @@
   </div>
   <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
     <div class="card col-sm-3 pl-0 pr-0 mt-5" >
-      <% @like_list.each do |recipe| %>
+      <% @likes.each do |like| %>
+        <% recipe = Recipe.find_by(id: like.recipe_id)%>
         <%= image_tag recipe.recipe_image.url, class: "bd-placeholder-img card-img-top recipe_icon" %>
         <div class="card-body">
           <h5 class="card-title font-weight-bold"><%= recipe.menu %></h5>

@@ -7,10 +7,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id]) 
-    
-    #いいね！したレシピを表示
-    likes = Like.where(user_id: current_user.id).pluck(:recipe_id) #ログイン中のユーザーのいいね！のrecipe_idカラムを取得
-    @like_list = Recipe.find(likes) #likesテーブルからいいね！済みのレコードを取得
+    @likes = Like.where(user_id: @user.id)
   end
 
   def new
