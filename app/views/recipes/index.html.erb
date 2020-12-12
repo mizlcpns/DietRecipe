@@ -10,6 +10,7 @@
         <div class="mr-3">脂質：<%= recipe.f %>g</div>
         <div>炭水化物：<%= recipe.c %>g</div>
       </p>
+      <p class="card-text font-weight-bold mt-1">投稿者:<%= recipe.user.name %></p>
       <%= link_to "レシピを見る", recipe_path(recipe), class: "btn btn-primary mr-2" %>
       <% if current_user && current_user.id == recipe.user_id %>
         <%= link_to "削除", recipe_path(recipe), method: :delete, class: "btn btn-danger mr-2" %>
