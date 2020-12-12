@@ -19,8 +19,10 @@
         </li>
       </ul>
       <div class="card-body">
-        <a href="#" class="card-link">Card link</a>
-        <a href="#" class="card-link">Another link</a>
+        <%= link_to "レシピ一覧に戻る", user_path(@recipe.user), class: "btn btn-primary mr-2" %>
+        <% if current_user && current_user.id == @recipe.user_id %>
+          <%= link_to "削除", recipe_path(@recipe), method: :delete, class: "btn btn-danger mr-2" %>
+        <% end %>
       </div>
     </div>
   </div>
