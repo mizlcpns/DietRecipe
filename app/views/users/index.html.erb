@@ -2,7 +2,7 @@
 
 <div class="row">
   <% @users.each do |user| %>
-    <div class="col-3">
+    <div class="col-sm-3">
       <div class="card pt-4 mt-5">
         <% if user.image? %>
           <%= image_tag user.image.url, class: "icon card-img-top" %>
