@@ -33,7 +33,7 @@
 <div class="tab-content" id="pills-tabContent">
   <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
     <div class="row">
-      <% @user.recipes.each do |recipe|%>
+      <% @user.recipes.each do |recipe| %>
         <div class="col-sm-3 mr-2 ml-2">
           <div class="card mt-5">
             <%= image_tag recipe.recipe_image.url, class: "bd-placeholder-img card-img-top recipe_icon" %>
@@ -48,17 +48,19 @@
               <%= link_to "レシピ詳細", recipe_path(recipe), class: "btn btn-primary" %>
               <% if current_user.id == @user.id %>
                 <%= link_to "削除", recipe_path(recipe), method: :delete, class: "btn btn-danger mr-2" %>
-              <% end %>
-              <%= recipe.likes.count %>
-              <% if current_user.already_liked?(recipe) %>
-                <%= link_to recipe_likes_path(recipe), method: :delete do %>
-                  <i class="fas fa-heart"></i>
+              <% end %><br>
+              <div class="row mt-2 ml-1">
+                <%= recipe.likes.count %><span class="mr-1">いいね！</span>
+                <% if current_user.already_liked?(recipe) %>
+                  <%= link_to recipe_likes_path(recipe), method: :delete do %>
+                    <i class="fas fa-heart"></i>
+                  <% end %>
+                <% else %>
+                  <%= link_to recipe_likes_path(recipe), method: :post do %>
+                    <i class="far fa-heart"></i>
+                  <% end %>
                 <% end %>
-              <% else %>
-                <%= link_to recipe_likes_path(recipe), method: :post do %>
-                  <i class="far fa-heart"></i>
-                <% end %>
-              <% end %>
+              </div>
             </div>
           </div>
         </div>
@@ -83,17 +85,19 @@
               <%= link_to "レシピ詳細", recipe_path(recipe), class: "btn btn-primary" %>
               <% if current_user.id == @user.id %>
                 <%= link_to "削除", recipe_path(recipe), method: :delete, class: "btn btn-danger mr-2" %>
-              <% end %>
-              <%= recipe.likes.count %>
-              <% if current_user.already_liked?(recipe) %>
-                <%= link_to recipe_likes_path(recipe), method: :delete do %>
-                  <i class="fas fa-heart"></i>
+              <% end %><br>
+              <div class="row mt-2 ml-1">
+                <%= recipe.likes.count %><span class="mr-1">いいね！</span>
+                <% if current_user.already_liked?(recipe) %>
+                  <%= link_to recipe_likes_path(recipe), method: :delete do %>
+                    <i class="fas fa-heart"></i>
+                  <% end %>
+                <% else %>
+                  <%= link_to recipe_likes_path(recipe), method: :post do %>
+                    <i class="far fa-heart"></i>
+                  <% end %>
                 <% end %>
-              <% else %>
-                <%= link_to recipe_likes_path(recipe), method: :post do %>
-                  <i class="far fa-heart"></i>
-                <% end %>
-              <% end %>
+              </div>
             </div>
           </div>
         </div>
