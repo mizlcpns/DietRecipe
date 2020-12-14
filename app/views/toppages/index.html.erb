@@ -1,5 +1,11 @@
 <% if logged_in? %>
-  <p>ログインしています：　<%= current_user.name %></p>
+  <div class="row message">
+    <h2 class="offset-sm-2 col-sm-8 text-center mt-5">ログインしています：<%= current_user.name %></h2>
+    <div class="offset-sm-2 col-sm-8 text-center mt-5">
+       <%= link_to "ユーザー詳細ページへ", user_path(current_user.id), class: "col-sm-3 btn btn-primary" %>
+       <%= link_to "ログアウト", logout_path, method: :delete, class: "col-sm-3 btn btn-danger" %>
+    </div>
+  </div>
 <% else %>
   <div class="main">
     <div class="toppage_text">
