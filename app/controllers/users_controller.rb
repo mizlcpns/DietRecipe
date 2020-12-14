@@ -1,12 +1,12 @@
 class UsersController < ApplicationController
   before_action :require_user_logged_in, only: [:index, :show]
+  before_action :set_user, only: [:show, :edit, :update]
   
   def index
     @users = User.order(id: :desc).page(params[:page]).per(12)
   end
 
   def show
-    @user = User.find(params[:id]) 
     @likes = Like.where(user_id: @user.id)
   end
 
@@ -27,12 +27,9 @@ class UsersController < ApplicationController
   end
   
   def edit
-    @user = User.find(params[:id])
   end
   
   def update
-    @user = User.find(params[:id])
-    
     if @user.update(user_params)
       flash[:success] = 'プロフィールは正常に更新されました！'
       redirect_to @user
@@ -43,6 +40,10 @@ class UsersController < ApplicationController
   end
   
   private
+  
+  def set_user #before_actionで共通化
+    @user = User.find(params[:id])
+  end
   
   def user_params
     params.require(:user).permit(:name, :email, :image, :password, :password_confirmation, :profile)
