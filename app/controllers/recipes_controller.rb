@@ -3,7 +3,7 @@ class RecipesController < ApplicationController
   before_action :correct_user, only: [:destroy]
   
   def index
-    @recipes = Recipe.order(id: :desc).page(params[:page]).per(12)
+    @recipes = Recipe.order(id: :desc).page(params[:page]).per(8)
   end
 
   def show
