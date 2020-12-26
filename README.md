@@ -1,24 +1,11 @@
-# README
+# DietRecipe
+趣味の筋トレの一環で食事制限をしており、食事内容を決める際に、  
+タンパク質・脂質・炭水化物のバランスが一目で分かるレシピ共有サイトがあれば便利だと思い、  
+「DietRecipe」というアプリケーションを作成しました。  
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+レシピを投稿するには会員登録が必要な仕様になっているのですが、  
+わざわざご登録いただくのはお手間かと思いますので、  
+こちらであらかじめテスト用のユーザーを作成しております。  
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* メールアドレス: test@gmail.com
+* パスワード: password
