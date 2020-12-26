@@ -12,7 +12,6 @@
         <h5 class="card-title font-weight-bold"><%= @user.name %></h5>
         <p class="card-text"><%= @user.profile %></p>
         <p class="card-text">
-          <small class="text-muted mr-4">アップデートした時刻を表示</small>
           <% if current_user.id == @user.id %>
             <%= link_to "編集", edit_user_path(current_user), class: "btn btn-secondary" %>
           <% end %>

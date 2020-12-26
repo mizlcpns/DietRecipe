@@ -68,3 +68,9 @@ gem 'carrierwave'
 gem 'mini_magick'
 
 gem 'jquery-rails'
+
+group :production, :staging do
+    gem 'unicorn'
+end
+
+gem 'dotenv-rails'
